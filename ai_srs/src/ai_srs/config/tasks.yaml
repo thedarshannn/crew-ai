@@ -1,0 +1,52 @@
+gather_requirements_task:
+  description: >
+    Gather detailed requirements for the {project_name} project. Engage with the user
+    through the Requirements Gatherer tool to collect information about:
+    1. Project overview and objectives
+    2. Target users/stakeholders
+    3. Functional requirements
+    4. Non-functional requirements (performance, security, usability, etc.)
+    5. Constraints and limitations
+    6. Assumptions and dependencies
+
+    Be thorough but concise in your questioning. Follow up on vague answers to get
+    specific details. Organize the information in a structured format.
+  expected_output: >
+    A comprehensive, well-organized collection of requirements covering all essential
+    aspects of the project. Each requirement should be clear, specific, and actionable.
+    Include categorization of requirements by type and priority where appropriate.
+  agent: requirements_analyst
+
+draft_srs_task:
+  description: >
+    Create a draft SRS document based on the gathered requirements. The document
+    should follow standard SRS structure and include:
+    1. Introduction (purpose, scope, definitions)
+    2. Overall description (product perspective, functions, user characteristics)
+    3. Specific requirements (functional, non-functional)
+    4. External interface requirements
+    5. Other non-functional requirements
+
+    Use the SRS Formatter tool to ensure proper formatting and organization.
+    Be precise in your language and avoid ambiguity.
+  expected_output: >
+    A well-structured draft SRS document that accurately captures all requirements
+    in a standardized format. The document should be organized according to IEEE 830
+    or similar standards, with clear section headers and consistent formatting.
+  agent: technical_writer
+
+review_srs_task:
+  description: >
+    Review the draft SRS document thoroughly for:
+    1. Completeness - Are all requirements addressed?
+    2. Consistency - Are there contradictions?
+    3. Clarity - Is the language precise and unambiguous?
+    4. Correctness - Does it accurately reflect gathered requirements?
+    5. Testability - Are requirements specific enough to test?
+
+    Suggest improvements where necessary and finalize the document.
+  expected_output: >
+    A finalized SRS document with review comments addressed and improvements
+    incorporated. The document should be ready for stakeholder review and
+    implementation planning. Format as markdown without '```'.
+  agent: reviewer
