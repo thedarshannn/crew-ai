@@ -175,23 +175,21 @@ The system produces professional SRS documents like this example for a Smart Spr
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <3.13 installed on your system. CrewAI uses UV for dependency management and package handling, offering a seamless setup and execution experience.
 
-First, if you haven't already, install uv:
-
-```bash
-pip install uv
-```
-
-````
-
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
+First, install CrewAI:
 
 ```bash
-crewai install
+pip install crewai
 ```
+
+If you want to install the 'crewai' package along with its optional features that include additional tools for agents, you can do so by using the following command:
+
+```bash
+pip install 'crewai[tools]'
+```
+
+The command above installs the basic package and also adds extra components which require more dependencies to function.
 
 ### Customizing
 
@@ -228,4 +226,3 @@ For support, questions, or feedback regarding the AiSrs Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
-````
