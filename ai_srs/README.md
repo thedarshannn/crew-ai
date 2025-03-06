@@ -12,7 +12,6 @@ The system implements a multi-agent approach using CrewAI, with each agent speci
 
 ```mermaid
 graph TD
-    %% Main process flow
     A[User Input: Project Details] --> B[Requirements Analyst]
     B -->|Interactive Questioning| C[Gather Requirements]
     C --> D[Technical Writer]
@@ -20,30 +19,11 @@ graph TD
     E --> F[Document Reviewer]
     F -->|QA & Validation| G[Final SRS Document]
 
-    %% Tools integration
-    B -.->|Uses| H[Requirements Gatherer Tool]
-    H -.->|Feeds back to| B
-    D -.->|Uses| I[SRS Formatter Tool]
-    I -.->|Provides structure for| D
-
-    %% Process phases
-    subgraph "Requirements Phase"
-        A
-        B
-        C
-        H
-    end
-
-    subgraph "Documentation Phase"
-        D
-        E
-        I
-    end
-
-    subgraph "Quality Assurance Phase"
-        F
-        G
-    end
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style D fill:#bbf,stroke:#333,stroke-width:2px
+    style F fill:#bbf,stroke:#333,stroke-width:2px
+    style G fill:#bfb,stroke:#333,stroke-width:2px
 ```
 
 ### Agent Roles
@@ -171,25 +151,68 @@ gather_requirements_task:
 ## Example Output
 
 The system produces professional SRS documents like this example for a Smart Sprout project:
-[SRS Output Document](srs_document.md).
+
+````markdown
+# Software Requirements Specification (SRS) for Smart Sprout
+
+## 1. Introduction
+
+### 1.1 Purpose
+
+This SRS document defines the requirements for Smart Sprout, an Android-based smart gardening system aimed at automating plant care through real-time data collection and monitoring.
+
+### 1.2 Scope
+
+Smart Sprout will track soil moisture, temperature, and light exposure, automate watering schedules, and integrate AI-based plant disease detection to enhance user experience in gardening.
+
+## 2. Overall Description
+
+### 2.1 Product Perspective
+
+Smart Sprout is designed for various user categories including homeowners, gardeners, urban gardeners, and agriculture enthusiasts. The system will allow integration with IoT sensor data for comprehensive plant care management.
+
+### 2.2 Functions
+
+The system includes the following functions:
+
+- Real-time monitoring of plant conditions using various sensors.
+- Automated irrigation scheduling based on sensor data and weather forecasts.
+- User authentication and plant identification through an API.
+- Notifications for plant care reminders and updates.
+
+## 3. Specific Requirements
+
+### 3.1 Functional Requirements
+
+1. The system shall provide real-time monitoring of plant conditions using sensors.
+2. The system shall automate irrigation scheduling based on sensor data and weather forecasts.
+3. The system shall utilize an API for user authentication and plant identification.
+4. The system shall send notifications for plant care reminders.
+
+### 3.2 Non-Functional Requirements
+
+- **Performance**: The system shall ensure real-time sensor data updates with minimal latency (less than 2 seconds).
+- **Security**: The system shall use Firebase Authentication for secure login.
+- **Usability**: The system's user interface shall be user-friendly with intuitive navigation.
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. CrewAI uses UV for dependency management and package handling, offering a seamless setup and execution experience.
+Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
-First, install CrewAI:
-
-```bash
-pip install crewai
-```
-
-If you want to install the 'crewai' package along with its optional features that include additional tools for agents, you can do so by using the following command:
+First, if you haven't already, install uv:
 
 ```bash
-pip install 'crewai[tools]'
+pip install uv
 ```
+````
 
-The command above installs the basic package and also adds extra components which require more dependencies to function.
+Next, navigate to your project directory and install the dependencies:
+
+(Optional) Lock the dependencies and install them by using the CLI command:
+
+```bash
+crewai install
+```
 
 ### Customizing
 
@@ -216,10 +239,13 @@ This example, unmodified, will run the create a `report.md` file with the output
 
 The ai-srs Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## References
+## Support
 
-- [CrewAI Documentation](https://docs.crewai.com)
-- [CrewAI GitHub Repository](https://github.com/joaomdmoura/crewai)
-- [How To Use AI Agents To Do ALL Your Work - Full CrewAI Course for Beginners](https://youtu.be/ONKOXwucLvE?si=H_xEz4MteZ_fpV6A)
+For support, questions, or feedback regarding the AiSrs Crew or crewAI.
+
+- Visit our [documentation](https://docs.crewai.com)
+- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
+- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
+- [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
