@@ -12,6 +12,7 @@ The system implements a multi-agent approach using CrewAI, with each agent speci
 
 ```mermaid
 graph TD
+    %% Main process flow
     A[User Input: Project Details] --> B[Requirements Analyst]
     B -->|Interactive Questioning| C[Gather Requirements]
     C --> D[Technical Writer]
@@ -19,11 +20,30 @@ graph TD
     E --> F[Document Reviewer]
     F -->|QA & Validation| G[Final SRS Document]
 
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style D fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bbf,stroke:#333,stroke-width:2px
-    style G fill:#bfb,stroke:#333,stroke-width:2px
+    %% Tools integration
+    B -.->|Uses| H[Requirements Gatherer Tool]
+    H -.->|Feeds back to| B
+    D -.->|Uses| I[SRS Formatter Tool]
+    I -.->|Provides structure for| D
+
+    %% Process phases
+    subgraph "Requirements Phase"
+        A
+        B
+        C
+        H
+    end
+
+    subgraph "Documentation Phase"
+        D
+        E
+        I
+    end
+
+    subgraph "Quality Assurance Phase"
+        F
+        G
+    end
 ```
 
 ### Agent Roles
