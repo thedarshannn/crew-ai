@@ -171,7 +171,7 @@ gather_requirements_task:
 ## Example Output
 
 The system produces professional SRS documents like this example for a Smart Sprout project:
-[SRS Output Document](srs_example.md).
+[SRS Output Document](srs_document.md).
 
 ## Installation
 
