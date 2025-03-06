@@ -171,49 +171,7 @@ gather_requirements_task:
 ## Example Output
 
 The system produces professional SRS documents like this example for a Smart Sprout project:
-
-````markdown
-# Software Requirements Specification (SRS) for Smart Sprout
-
-## 1. Introduction
-
-### 1.1 Purpose
-
-This SRS document defines the requirements for Smart Sprout, an Android-based smart gardening system aimed at automating plant care through real-time data collection and monitoring.
-
-### 1.2 Scope
-
-Smart Sprout will track soil moisture, temperature, and light exposure, automate watering schedules, and integrate AI-based plant disease detection to enhance user experience in gardening.
-
-## 2. Overall Description
-
-### 2.1 Product Perspective
-
-Smart Sprout is designed for various user categories including homeowners, gardeners, urban gardeners, and agriculture enthusiasts. The system will allow integration with IoT sensor data for comprehensive plant care management.
-
-### 2.2 Functions
-
-The system includes the following functions:
-
-- Real-time monitoring of plant conditions using various sensors.
-- Automated irrigation scheduling based on sensor data and weather forecasts.
-- User authentication and plant identification through an API.
-- Notifications for plant care reminders and updates.
-
-## 3. Specific Requirements
-
-### 3.1 Functional Requirements
-
-1. The system shall provide real-time monitoring of plant conditions using sensors.
-2. The system shall automate irrigation scheduling based on sensor data and weather forecasts.
-3. The system shall utilize an API for user authentication and plant identification.
-4. The system shall send notifications for plant care reminders.
-
-### 3.2 Non-Functional Requirements
-
-- **Performance**: The system shall ensure real-time sensor data updates with minimal latency (less than 2 seconds).
-- **Security**: The system shall use Firebase Authentication for secure login.
-- **Usability**: The system's user interface shall be user-friendly with intuitive navigation.
+[SRS Output Document](srs_example.md).
 
 ## Installation
 
@@ -224,6 +182,7 @@ First, if you haven't already, install uv:
 ```bash
 pip install uv
 ```
+
 ````
 
 Next, navigate to your project directory and install the dependencies:
@@ -269,3 +228,4 @@ For support, questions, or feedback regarding the AiSrs Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+````
